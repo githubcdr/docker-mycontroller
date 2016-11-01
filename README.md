@@ -3,5 +3,5 @@
 Run command
 
 ```
-docker un -d -p 1883 -p 8443 -name mycontroller cdrocker/mycontroller
+docker run -d -p 1883 -p 8443 -name mycontroller cdrocker/mycontroller
 ```
