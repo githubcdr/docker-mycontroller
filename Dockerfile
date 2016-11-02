@@ -1,23 +1,26 @@
 FROM alpine:latest
 MAINTAINER me codar nl
-RUN apk add --update --no-cache s6 ca-certificates openjdk8-jre-base wget
+ENV MYCONTROLLER_URL="http://github.com/mycontroller-org/mycontroller/releases/download/0.0.3.Alpha2/mycontroller-dist-standalone-0.0.3.Alpha2-bundle.tar.gz"
 
-ENV MYCONTROLLER_URL="https://github.com/mycontroller-org/mycontroller/releases/download/0.0.3.Alpha2/mycontroller-dist-standalone-0.0.3.Alpha2-bundle.tar.gz"
+# pin to /tmp
+WORKDIR /tmp
 
-# fixups and permissions
-RUN	cd /tmp \
-	&& wget $MYCONTROLLER_URL -O mycontroller.tar.gz \
+# dependencies
+RUN apk add --update --no-cache s6 ca-certificates openjdk8-jre-base
+
+# install
+RUN	   wget $MYCONTROLLER_URL -O mycontroller.tar.gz \
 	&& tar zxf mycontroller.tar.gz -C /usr/local \
-	&& rm mycontroller.tar.gz
+	&& rm -f /tmp/*
 
 # add files
 COPY files/root/ /
 
-# fixups
-RUN	chmod +x /service/mycontroller/run
+# fixes
+RUN	chmod +x /service/*/run
 
-# ready to run, expose web and mqtt
+# expose mqtt and web
 EXPOSE 1883/tcp 8443/tcp
 
+# launch s6
 ENTRYPOINT ["/bin/s6-svscan","/service"]
-
