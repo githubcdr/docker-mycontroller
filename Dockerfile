@@ -6,7 +6,7 @@ ENV MYCONTROLLER_URL="http://github.com/mycontroller-org/mycontroller/releases/d
 WORKDIR /tmp
 
 # dependencies
-RUN apk add --update --no-cache s6 ca-certificates openjdk8-jre-base
+RUN apk add --update --no-cache s6 ca-certificates openjdk8-jre-base wget
 
 # install
 RUN	   wget $MYCONTROLLER_URL -O mycontroller.tar.gz \
