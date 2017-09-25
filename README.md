@@ -14,6 +14,10 @@ Please check out the Mysensors website https://www.mysensors.org/ for more info.
 
 Original code available at http://www.mycontroller.org/
 
+# Changelog
+
+* 2017-09-25: Updated to 1.0 final release
+
 # Instructions
 
 Run command
