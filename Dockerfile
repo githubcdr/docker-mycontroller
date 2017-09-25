@@ -1,6 +1,14 @@
 FROM alpine:latest
-MAINTAINER me codar nl
-ENV MYCONTROLLER_URL="http://github.com/mycontroller-org/mycontroller/releases/download/0.0.3.Alpha2/mycontroller-dist-standalone-0.0.3.Alpha2-bundle.tar.gz"
+ENV VERSION=1.0
+ENV MYCONTROLLER_URL="https://github.com/mycontroller-org/mycontroller/releases/download/0.0.1.Final/mycontroller-dist-standalone-1.0.0.Final-bundle.tar.gz"
+
+LABEL \
+	org.label-schema.maintainer="me codar nl" \
+	org.label-schema.name="mycontroller" \
+	org.label-schema.description="Mycontroller running on Alpine Linux" \
+	org.label-schema.version="${VERSION}" \
+	org.label-schema.vcs-url="https://github.com/githubcdr/docker-mycontroller" \
+	org.label-schema.schema-version="1.0"
 
 # pin to /tmp
 WORKDIR /tmp
