@@ -1,6 +1,6 @@
 FROM alpine:latest
-ENV VERSION=1.0
-ENV MYCONTROLLER_URL="https://github.com/mycontroller-org/mycontroller/releases/download/1.0.0.Final/mycontroller-dist-standalone-1.0.0.Final-bundle.tar.gz"
+ENV VERSION=1.1
+ENV MYCONTROLLER_URL="https://github.com/mycontroller-org/mycontroller/releases/download/1.1.0.Final/mycontroller-dist-standalone-1.1.0.Final-bundle.tar.gz"
 
 LABEL \
 	org.label-schema.maintainer="me codar nl" \
