@@ -16,6 +16,7 @@ Original code available at http://www.mycontroller.org/
 
 ## Changelog
 
+* 2018-02-25: Updated to 1.2 final release
 * 2018-01-09: Updated to 1.1 final release
 * 2017-09-25: Updated to 1.0 final release
 
