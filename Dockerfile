@@ -1,5 +1,5 @@
 FROM alpine:latest
-ENV VERSION=1.2.0
+ENV VERSION=1.3.0
 ENV MYCONTROLLER_URL="https://github.com/mycontroller-org/mycontroller/releases/download/${VERSION}.Final/mycontroller-dist-standalone-${VERSION}.Final-bundle.tar.gz"
 
 LABEL \
