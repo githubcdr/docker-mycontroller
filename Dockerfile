@@ -14,7 +14,7 @@ LABEL \
 WORKDIR /tmp
 
 # dependencies
-RUN apk add --update --no-cache s6 ca-certificates openjdk8-jre-base wget
+RUN apk add --update --no-cache s6 ca-certificates openjdk8-jre-base wget tzdata
 
 # install
 RUN	   wget $MYCONTROLLER_URL -O mycontroller.tar.gz \
