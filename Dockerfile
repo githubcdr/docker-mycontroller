@@ -1,5 +1,5 @@
 ARG ARCH=
-FROM alpine:20220715
+FROM alpine:20221110
 ENV VERSION=1.5.0
 ENV MYCONTROLLER_URL="https://github.com/mycontroller-org/mycontroller/releases/download/${VERSION}.Final/mycontroller-dist-standalone-${VERSION}-bundle.tar.gz"
 LABEL \
